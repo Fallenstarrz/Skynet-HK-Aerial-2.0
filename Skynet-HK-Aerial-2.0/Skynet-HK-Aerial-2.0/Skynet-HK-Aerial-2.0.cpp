@@ -11,6 +11,7 @@ using namespace std;
 
 int main()
 {
+	char playAgain; // This variable holds the character the player inputs when asked if they would like to play again or not
 
 	cout << "Skynet HK-Aerial 2.0\nLets play a war game!" << endl << endl;
 	do // This forces the player to play at least once. This is where we will restart the loop.
@@ -28,7 +29,6 @@ int main()
 		int ai3Tries = 0; // This variable holds the number of attempts it took random search AI to find the target
 		int humanTries = 0; // This variable holds the number of attempts it took the player to find the target
 		int winner; // This variable holds the number of attempts it took the winner to find the target
-		char playAgain; // This variable holds the character the player inputs when asked if they would like to play again or not
 
 		do // Do loop! This runs at least once! Human Guess
 		{
@@ -137,14 +137,15 @@ int main()
 			cout << "Human Player 1 Wins!" << endl;
 		}
 
-		cout << "\n\nWould you like to play again?\nY/N" << endl;
-		cin >> playAgain;
-		while (playAgain != 'Y' && playAgain != 'N' && playAgain != 'y' && playAgain != 'n')
+		cout << "\n\nWould you like to play again?\nY/N" << endl; // Ask player if they want to play again or not
+		cin >> playAgain; // Player input for wrether they want to play again or not
+		while (playAgain != 'Y' && playAgain != 'N' && playAgain != 'y' && playAgain != 'n') // This loop catches invalid inputs
 		{
 			cout << "Error: Invalid Input.\nPlease Select a valid operator\n";
 			cin >> playAgain;
 		}
 	} while (playAgain == 'y' || playAgain == 'Y');
+
 	system("pause"); // Pause the console
 	return 0;
 }
